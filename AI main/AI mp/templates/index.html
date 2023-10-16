@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI ka headache</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/images/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFD700 !important;
+        }
+
+        .logo {
+            max-width: 300px; /* Adjust the maximum width to shorten the logo */
+            margin-bottom: 20px; /* Add margin below the logo */
+        }
+
+        form {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px; /* Shift the form above */
+        }
+
+        input[type="text"] {
+            width: 300%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: -100px 0 0; /* Add margin only at the bottom to shift the text box above */
+        }
+
+        input[type="submit"] {
+            background-color: #FF5733;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px 0; /* Add margin above and below the submit button */
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo Image"> <!-- Image Tag for 'logo.png' -->
+    <form method="POST" action="/chat">
+        <input type="text" name="user_input" placeholder="Type your message">
+        <input type="submit" value="Send" style="background-color: #FF5733; color: #fff;">
+    </form>
+</body>
+</html>
